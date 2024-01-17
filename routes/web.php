@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PackageController;
+use App\Http\Controllers\RegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::resource('package', PackageController::class);
+Route::post('/package/EditForm', [PackageController::class, 'EditForm'])->name('package.EditForm');
+
+Route::resource('registration', RegistrationController::class);
