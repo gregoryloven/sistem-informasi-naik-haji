@@ -24,6 +24,7 @@ class CreateRegistrationsTable extends Migration
             $table->string('kk');
             $table->string('akta_kelahiran');
             $table->string('dokumen_bpih');
+            $table->date('tanggal_keberangkatan');
             $table->integer('status');//0=Ditolak, 1=Pengajuan, 2=Disetujui
             $table->string('alasan_penolakan');
             $table->foreign('package_id')->references('id')->on('packages'); 
