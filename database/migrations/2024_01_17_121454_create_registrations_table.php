@@ -15,6 +15,7 @@ class CreateRegistrationsTable extends Migration
     {
         Schema::create('registrations', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('package_id');       
             $table->string('nama_lengkap');
             $table->string('tempat_lahir');
@@ -27,6 +28,7 @@ class CreateRegistrationsTable extends Migration
             $table->date('tanggal_keberangkatan');
             $table->integer('status');//0=Ditolak, 1=Pengajuan, 2=Disetujui
             $table->string('alasan_penolakan');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('package_id')->references('id')->on('packages'); 
             $table->timestamps();
         });
