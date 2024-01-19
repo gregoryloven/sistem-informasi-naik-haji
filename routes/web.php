@@ -24,3 +24,4 @@ Route::resource('package', PackageController::class);
 Route::post('/package/EditForm', [PackageController::class, 'EditForm'])->name('package.EditForm');
 
 Route::resource('registration', RegistrationController::class);
+Route::get('/registration/detail/{id}', [RegistrationController::class, 'show'])->name('registration.detail');

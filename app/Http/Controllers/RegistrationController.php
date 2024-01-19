@@ -14,7 +14,10 @@ class RegistrationController extends Controller
      */
     public function index()
     {
-        //
+        $data = Registration::where('status', 1)->get();
+        $data2 = Registration::whereIn('status', [0,2])->get();
+
+        return view('registration.index', compact('data','data2'));
     }
 
     /**
