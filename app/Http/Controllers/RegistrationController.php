@@ -20,6 +20,24 @@ class RegistrationController extends Controller
         return view('registration.index', compact('data','data2'));
     }
 
+    public function accept(Request $request)
+    {
+        $data = Registration::find($request->id);
+        $data->status = 2;
+        $data->save();
+
+        return back()->withToastSuccess('Pendaftaran Naik Haji telah Disetujui');
+    }
+
+    public function decline(Request $request)
+    {
+        $data = Registration::find($request->id);
+        $data->status = 0;
+        $data->save();
+
+        return back()->withToastSuccess('Pendaftaran Naik Haji telah Ditolak');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
