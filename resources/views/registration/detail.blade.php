@@ -19,7 +19,7 @@
                 <div class="col-md-12">
                     <div class="card shadow">
                         <div class="card-header py-3">
-                            Ubah Formulir Pendaftaran Sakramen Perkawinan
+                            Detail Pendaftaran Pendaftaran Naik Haji
                         </div>
                     <div class="card-body">
                         <div class="row gutters">
@@ -48,28 +48,28 @@
                                     <input type="text" class="form-control" value="{{$data->alamat}}" id='alamat' name='alamat' placeholder="Alamat" readonly required>
                                 </div>
                             </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
                                     <label>Foto / Scan KTP</label>
                                     <input class="form-control" value="{{$data->ktp}}" id='ktp' name='ktp' readonly>
                                     <img id="output" src="{{asset('lampiran/'.$data->ktp)}}" width="100px" height="100px">
                                 </div>
                             </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
                                     <label>Foto / Scan Kartu Keluarga</label>
                                     <input class="form-control" value="{{$data->kk}}" id='kk' name='kk' readonly>
                                     <img id="output2" src="{{asset('lampiran/'.$data->kk)}}" width="100px" height="100px">
                                 </div>
                             </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
                                     <label>Foto / Scan Akta Kelahiran</label>
                                     <input class="form-control" value="{{$data->akta_kelahiran}}" id='akta_kelahiran' name='akta_kelahiran' readonly>
                                     <img id="output3" src="{{asset('lampiran/'.$data->akta_kelahiran)}}" width="100px" height="100px">
                                 </div>
                             </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
                                     <label>Foto / Scan Dokumen BPIH</label>
                                     <input class="form-control" value="{{$data->dokumen_bpih}}" id='dokumen_bpih' name='dokumen_bpih' readonly>
@@ -79,7 +79,7 @@
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
                                     <label>Tanggal Keberangkatan</label>
-                                    <input type="date" class="form-control" value="{{$data->tanggal_keberangkatan}}" id='tanggal_keberangkatan' name='tanggal_keberangkatan' readonly required>
+                                    <input type="text" class="form-control" value="{{tanggal_indonesia($data->tanggal_keberangkatan)}}, {{waktu_indonesia($data->tanggal_keberangkatan)}}" id='tanggal_keberangkatan' name='tanggal_keberangkatan' readonly required>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -91,32 +91,44 @@
                             @if($data->status == 1)
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="d-flex justify-content-end">
-                                    <form action="/registration/accept" class="ml-2" method="post">
-                                        @csrf
-                                        <input type="text" name="id" class="d-none" value="{{$d->id}}">
-                                        <button class="btn btn-success" type="submit">Approve</button>
-                                    </form>
                                     <form action="/registration/decline" class="ml-2" method="post">
                                         @csrf
-                                        <input type="text" name="id" class="d-none" value="{{$d->id}}">
-                                        <a href="#modal{{$d->id}}" data-toggle="modal" class="btn btn-danger">Decline</a>
+                                        <input type="text" name="id" class="d-none" value="{{$data->id}}">
+                                        <a href="#modal{{$data->id}}" data-toggle="modal" class="btn btn-danger">Decline</a>
+                                    </form>
+                                    <form action="/registration/accept" class="ml-2" method="post">
+                                        @csrf
+                                        <input type="text" name="id" class="d-none" value="{{$data->id}}">
+                                        <button class="btn btn-success" type="submit">Approve</button>
                                     </form>
                                 </div>
                             </div><br>
                             @elseif ($data->status == 2)
-                                <div class="alert alert-success" role="alert">
-                                    @if($d->status == 2) Diterima
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="d-flex justify-content-end">
+                                    <div class="alert alert-success" role="alert">
+                                        @if($data->status == 2) Diterima @endif
+                                    </div>
                                 </div>
+                            </div>
                             @else
-                                <div class="alert alert-danger" role="alert">
-                                    @if($d->status == 0) Ditolak
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="d-flex justify-content-end align-items-center">
+                                    <div class="alert alert-danger" role="alert">
+                                        @if($data->status == 0) Ditolak @endif
+                                    </div>
                                 </div>
-                                <small><b>Pada:</b> {{tanggal_indonesia($d->updated_at)}}, {{waktu_indonesia($d->updated_at)}} WITA
-                                <br><b>Alasan:</b> {{$d->alasan_penolakan}}</small>
+                                <div class="d-flex justify-content-end mt-2">
+                                    <small>
+                                        <b>Pada:</b> {{tanggal_indonesia($data->updated_at)}}, {{waktu_indonesia($data->updated_at)}}
+                                        <br><b>Alasan:</b> {{$data->alasan_penolakan}}
+                                    </small>
+                                </div>
+                            </div>
                             @endif
 
                             <!-- EDIT WITH MODAL -->
-                            <div class="modal fade" id="modal{{$d->id}}" tabindex="-1" role="basic" aria-hidden="true">
+                            <div class="modal fade" id="modal{{$data->id}}" tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content" >
                                         <form role="form" method="POST" action="{{ url('registration/decline') }}" enctype="multipart/form-data">
@@ -126,9 +138,8 @@
                                                 <h4 class="modal-title">Penolakan Pendaftaran Naik Haji</h4>
                                             </div>
                                             <div class="modal-body">
-                                                @csrf
                                                 <label>Alasan Penolakan:</label>
-                                                <input type="hidden" name="id" value="{{$d->id}}">
+                                                <input type="hidden" name="id" value="{{$data->id}}">
                                                 <textarea name="alasan_penolakan" class="form-control" id="" cols="30" rows="10" required></textarea>
                                             </div>
                                             <div class="modal-footer">

@@ -65,11 +65,10 @@
   <script src="../../admin/assets/js/custom.js"></script>
 
   <script>
-        jQuery(document).ready(function() {    
-            $('#myTable').DataTable();
-        });
-    </script>
-
+    jQuery(document).ready(function() {    
+        $('#myTable').DataTable();
+    });
+  </script>
   @yield('javascript')
 </body>
 </html>

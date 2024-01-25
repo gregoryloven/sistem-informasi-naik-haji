@@ -65,9 +65,10 @@ class RegistrationController extends Controller
      * @param  \App\Models\Registration  $registration
      * @return \Illuminate\Http\Response
      */
-    public function show(Registration $registration)
+    public function show($id)
     {
-        //
+        $data = Registration::find($id);
+        return view('registration.detail', compact('data'));
     }
 
     /**
