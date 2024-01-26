@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\DaftarHajiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +16,12 @@ use App\Http\Controllers\RegistrationController;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('enduser.index');
 });
 
 
@@ -27,3 +32,5 @@ Route::resource('registration', RegistrationController::class);
 Route::get('/registration/detail/{id}', [RegistrationController::class, 'show'])->name('registration.detail');
 Route::post('/registration/accept', [RegistrationController::class, 'accept'])->name('registration.accept');
 Route::post('/registration/decline', [RegistrationController::class, 'decline'])->name('registration.decline');
+
+Route::resource('daftar-haji', DaftarHajiController::class);
