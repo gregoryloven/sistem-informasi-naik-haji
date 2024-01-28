@@ -69,6 +69,7 @@ T e m p l a t e M o
 
         <!-- JAVASCRIPT FILES -->
         <script src="../../enduser/js/jquery.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
         <script src="../../enduser/js/bootstrap.min.js"></script>
         <script src="../../enduser/js/jquery.sticky.js"></script>
         <script src="../../enduser/js/click-scroll.js"></script>

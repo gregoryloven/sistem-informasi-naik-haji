@@ -24,6 +24,9 @@ Route::get('/', function () {
     return view('enduser.index');
 });
 
+route::middleware(['auth'])->group(function(){
+    
+Route::get('/home', [DaftarHajiController::class, 'index']);
 
 Route::resource('package', PackageController::class);
 Route::post('/package/EditForm', [PackageController::class, 'EditForm'])->name('package.EditForm');
@@ -34,3 +37,11 @@ Route::post('/registration/accept', [RegistrationController::class, 'accept'])->
 Route::post('/registration/decline', [RegistrationController::class, 'decline'])->name('registration.decline');
 
 Route::resource('daftar-haji', DaftarHajiController::class);
+Route::get('/daftar-haji/detail/{id}', [DaftarHajiController::class, 'show'])->name('daftar-haji.detail');
+
+
+});
+
+Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

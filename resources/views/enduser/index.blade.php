@@ -1,4 +1,4 @@
-@extends('layouts2.enduser')
+@extends('layouts2.enduser', ['includeNavbar' => true])
 
 @section('content')
 
@@ -9,14 +9,14 @@
             <div class="row">
 
                 <div class="col-12 mt-auto mb-5 text-center">
-                    <small>Festava Live Presents</small>
+                    <!-- <small>Festava Live Presents</small> -->
 
-                    <h1 class="text-white mb-5">Night Live 2023</h1>
+                    <h1 class="text-white mb-5">Pendaftaran Naik Haji</h1>
 
-                    <a class="btn custom-btn smoothscroll" href="#section_2">Let's begin</a>
+                    <a class="btn custom-btn smoothscroll" href="/daftar-haji/create">Daftar Sekarang</a>
                 </div>
 
-                <div class="col-lg-12 col-12 mt-auto d-flex flex-column flex-lg-row text-center">
+                <!-- <div class="col-lg-12 col-12 mt-auto d-flex flex-column flex-lg-row text-center">
                     <div class="date-wrap">
                         <h5 class="text-white">
                             <i class="custom-icon bi-clock me-2"></i>
@@ -54,17 +54,18 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
         <div class="video-wrap">
             <video autoplay="" loop="" muted="" class="custom-video" poster="">
-                <source src="../../enduser/video/pexels-2022395.mp4" type="video/mp4">
+                <source src="../../enduser/video/mekah.mp4" type="video/mp4">
 
                 Your browser does not support the video tag.
             </video>
         </div>
+        
     </section>
 
 
@@ -74,25 +75,26 @@
 
                 <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center">
                     <div class="services-info">
-                        <h2 class="text-white mb-4">About Festava 2022</h2>
+                        <h2 class="text-white mb-4">Doa</h2>
 
-                        <p class="text-white">Festava Live is free CSS template provided by TemplateMo website. This layout is built on Bootstrap v5.2.2 CSS library. You are free to use this template for your commercial website.</p>
+                        <h6 class="text-white mt-4">Tawaf (Mencari)</h6>
+                        <p class="text-white">"Labbaik Allahumma Labbaik. Labbaik, la sharika laka, labbaik. Innal hamda wannimata laka wal mulk, la sharika lak."</p>
 
-                        <h6 class="text-white mt-4">Once in Lifetime Experience</h6>
+                        <h6 class="text-white mt-4">Doa di Maqam Ibrahim</h6>
 
-                        <p class="text-white">You are not allowed to redistribute the template ZIP file on any other website without a permission.</p>
+                        <p class="text-white">"Rabbana atina fid-dunya hasanatan wa fil 'akhirati hasanatan waqina 'adhaban-nar."</p>
 
-                        <h6 class="text-white mt-4">Whole Night Party</h6>
+                        <h6 class="text-white mt-4">Doa di Arafah (haji)</h6>
 
-                        <p class="text-white">Please tell your friends about our website. Thank you.</p>
+                        <p class="text-white">"La ilaha illallah wahdahu la sharika lah, lahul-mulku wa lahul-hamdu wa huwa 'ala kulli shay'in qadir."</p>
                     </div>
                 </div>
 
                 <div class="col-lg-6 col-12">
                     <div class="about-text-wrap">
-                        <img src="../../enduser/images/pexels-alexander-suhorucov-6457579.jpg" class="about-image img-fluid">
+                        <img src="../../enduser/images/mekah1.jpg" class="about-image img-fluid">
 
-                        <div class="about-text-info d-flex">
+                        <!-- <div class="about-text-info d-flex">
                             <div class="d-flex">
                                 <i class="about-text-icon bi-person"></i>
                             </div>
@@ -103,7 +105,7 @@
 
                                 <p class="mb-0">your amazing festival experience with us</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -117,16 +119,16 @@
             <div class="row justify-content-center">
 
                 <div class="col-12 text-center">
-                    <h2 class="mb-4">Meet Artists</h1>
+                    <h2 class="mb-4">Album</h1>
                 </div>
 
                 <div class="col-lg-5 col-12">
                     <div class="artists-thumb">
                         <div class="artists-image-wrap">
-                            <img src="../../enduser/images/artists/joecalih-UmTZqmMvQcw-unsplash.jpg" class="artists-image img-fluid">
+                            <img src="../../enduser/images/artists/mekah1.jpg" class="artists-image img-fluid">
                         </div>
 
-                        <div class="artists-hover">
+                        <!-- <div class="artists-hover">
                             <p>
                                 <strong>Name:</strong>
                                 Madona
@@ -148,17 +150,17 @@
                                 <strong>Youtube Channel:</strong>
                                 <a href="#">Madona Official</a>
                             </p>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
                 <div class="col-lg-5 col-12">
                     <div class="artists-thumb">
                         <div class="artists-image-wrap">
-                            <img src="../../enduser/images/artists/abstral-official-bdlMO9z5yco-unsplash.jpg" class="artists-image img-fluid">
+                            <img src="../../enduser/images/artists/mekah2.jpg" class="artists-image img-fluid">
                         </div>
 
-                        <div class="artists-hover">
+                        <!-- <div class="artists-hover">
                             <p>
                                 <strong>Name:</strong>
                                 Rihana
@@ -180,13 +182,13 @@
                                 <strong>Youtube Channel:</strong>
                                 <a href="#">Rihana Official</a>
                             </p>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="artists-thumb">
-                        <img src="../../enduser/images/artists/soundtrap-rAT6FJ6wltE-unsplash.jpg" class="artists-image img-fluid">
+                        <img src="../../enduser/images/artists/mekah3.jpg" class="artists-image img-fluid">
 
-                        <div class="artists-hover">
+                        <!-- <div class="artists-hover">
                             <p>
                                 <strong>Name:</strong>
                                 Bruno Bros
@@ -208,7 +210,7 @@
                                 <strong>Youtube Channel:</strong>
                                 <a href="#">Bruno Official</a>
                             </p>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -217,7 +219,7 @@
     </section>
 
 
-    <section class="schedule-section section-padding" id="section_4">
+    <!-- <section class="schedule-section section-padding" id="section_4">
         <div class="container">
             <div class="row">
 
@@ -311,7 +313,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
     <section class="pricing-section section-padding section-bg" id="section_5">
@@ -319,35 +321,35 @@
             <div class="row">
 
                 <div class="col-lg-8 col-12 mx-auto">
-                    <h2 class="text-center mb-4">Plans, you' love</h2>
+                    <h2 class="text-center mb-4">Paket</h2>
                 </div>
                 
                 <div class="col-lg-6 col-12">
                     <div class="pricing-thumb">
                         <div class="d-flex">
                             <div>
-                                <h3><small>Early Bird</small> $120</h3>
+                                <h3><small>Express</small> 5 Tahun</h3>
 
-                                <p>Including good things:</p>
+                                <p>Including:</p>
                             </div>
 
-                            <p class="pricing-tag ms-auto">Save up to <span>50%</span></h2>
+                            <!-- <p class="pricing-tag ms-auto">Save up to <span>50%</span></h2> -->
                         </div>
 
                         <ul class="pricing-list mt-3">
-                            <li class="pricing-list-item">platform for potential customers</li>
+                            <li class="pricing-list-item">Transportasi</li>
 
-                            <li class="pricing-list-item">digital experience</li>
+                            <li class="pricing-list-item">Akomodasi</li>
 
-                            <li class="pricing-list-item">high-quality sound</li>
+                            <li class="pricing-list-item">Guide</li>
 
-                            <li class="pricing-list-item">standard content</li>
+                            <li class="pricing-list-item">Konsumsi</li>
                         </ul>
 
-                        <a class="link-fx-1 color-contrast-higher mt-4" href="ticket.html">
+                        <!-- <a class="link-fx-1 color-contrast-higher mt-4" href="ticket.html">
                             <span>Buy Ticket</span>
                             <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="15.5"></circle><line x1="10" y1="18" x2="16" y2="12"></line><line x1="16" y1="12" x2="22" y2="18"></line></g></svg>
-                        </a>
+                        </a> -->
                     </div>
                 </div>
 
@@ -355,28 +357,26 @@
                     <div class="pricing-thumb">
                         <div class="d-flex">
                             <div>
-                                <h3><small>Standard</small> $240</h3>
+                                <h3><small>Regular</small> 10 Tahun</h3>
 
-                                <p>What makes a premium festava?</p>
+                                <p>Including:</p>
                             </div>
                         </div>
 
                         <ul class="pricing-list mt-3">
-                            <li class="pricing-list-item">platform for potential customers</li>
+                            <li class="pricing-list-item">Transportasi</li>
 
-                            <li class="pricing-list-item">digital experience</li>
+                            <li class="pricing-list-item">Akomodasi</li>
 
-                            <li class="pricing-list-item">high-quality sound</li>
+                            <li class="pricing-list-item">Guide</li>
 
-                            <li class="pricing-list-item">premium content</li>
-                            
-                            <li class="pricing-list-item">live chat support</li>
+                            <li class="pricing-list-item">Konsumsi</li>
                         </ul>
 
-                        <a class="link-fx-1 color-contrast-higher mt-4" href="ticket.html">
+                        <!-- <a class="link-fx-1 color-contrast-higher mt-4" href="ticket.html">
                             <span>Buy Ticket</span>
                             <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="15.5"></circle><line x1="10" y1="18" x2="16" y2="12"></line><line x1="16" y1="12" x2="22" y2="18"></line></g></svg>
-                        </a>
+                        </a> -->
                     </div>
                 </div>
 

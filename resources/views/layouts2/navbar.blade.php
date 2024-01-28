@@ -17,24 +17,53 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link click-scroll" href="#section_2">About</a>
+                    <a class="nav-link click-scroll" href="#section_2">Doa</a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link click-scroll" href="#section_6">Album</a>
                 </li>
 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link click-scroll" href="#section_3">Doa</a>
-                </li>
+                </li> -->
 
                 <li class="nav-item">
                     <a class="nav-link click-scroll" href="#section_5">Paket</a>
                 </li>
 
+                @auth
+                <li class="nav-item">
+                    <a href="/daftar-haji/create" class="nav-link click-scroll">Daftar</a>
+                </li>
+                @endauth
+
             </ul>
 
-            <a href="/daftar-haji" class="btn custom-btn d-lg-block d-none">Daftar</a>
+            @auth
+            <div class="dropdown">
+            <!-- <li class="nav-item dropdown"> -->
+                <button class="btn custom-btn d-lg-block d-none dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ Auth::user()->name }}
+                </button>
+
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
+            <!-- </li> -->
+            <div>
+            @else
+                <a href="/daftar-haji/create" class="btn custom-btn d-lg-block d-none">Daftar</a>
+            @endauth
+            
         </div>
     </div>
 </nav>
