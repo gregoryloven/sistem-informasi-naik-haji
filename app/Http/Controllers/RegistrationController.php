@@ -15,7 +15,9 @@ class RegistrationController extends Controller
     public function index()
     {
         $data = Registration::where('status', 1)->get();
-        $data2 = Registration::whereIn('status', [0,2])->get();
+        $data2 = Registration::whereIn('status', [0,2])
+            ->orderby('updated_at', 'desc')
+            ->get();
 
         return view('registration.index', compact('data','data2'));
     }
@@ -29,13 +31,10 @@ class RegistrationController extends Controller
         return back()->withToastSuccess('Pendaftaran Naik Haji telah Disetujui');
     }
 
-    public function decline(Request $request)
+    public function decline($id)
     {
-        $data = Registration::find($request->id);
-        $data->status = 0;
-        $data->save();
-
-        return back()->withToastSuccess('Pendaftaran Naik Haji telah Ditolak');
+        $data = Registration::find($id);
+        return view('registration.decline', compact('data'));
     }
 
     /**
@@ -91,7 +90,12 @@ class RegistrationController extends Controller
      */
     public function update(Request $request, Registration $registration)
     {
-        //
+        $registration->update([
+            'status' => 0,
+            'alasan_penolakan' => $request->alasan_penolakan,
+        ]);
+
+        return redirect()->route('registration.index')->withToastSuccess('Pendaftaran Naik Haji telah Ditolak');
     }
 
     /**
@@ -104,4 +108,5 @@ class RegistrationController extends Controller
     {
         //
     }
+
 }

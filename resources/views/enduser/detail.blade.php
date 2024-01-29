@@ -89,8 +89,18 @@
                                                 @if($data->status == 1) Belum Dikonfirmasi @endif
                                             </div>
                                         @elseif($data->status == 2)
-                                            <div class="alert alert-success" role="alert">
+                                            <div class="alert alert-success text-center" role="alert">
                                                 @if($data->status == 2) Diterima @endif
+                                            </div>
+                                        @elseif($data->status == 0)
+                                            <div class="alert alert-danger text-center" role="alert">
+                                                @if($data->status == 0) Ditolak @endif
+                                            </div>
+                                            <div class="d-flex justify-content-center mt-2">
+                                                <small>
+                                                    <b>Pada:</b> {{tanggal_indonesia($data->updated_at)}}, {{waktu_indonesia($data->updated_at)}}
+                                                    <br><b>Alasan:</b> {{$data->alasan_penolakan}}
+                                                </small>
                                             </div>
                                         @endif
                                     </div>

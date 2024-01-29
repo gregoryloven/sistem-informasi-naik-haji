@@ -34,7 +34,7 @@ Route::post('/package/EditForm', [PackageController::class, 'EditForm'])->name('
 Route::resource('registration', RegistrationController::class);
 Route::get('/registration/detail/{id}', [RegistrationController::class, 'show'])->name('registration.detail');
 Route::post('/registration/accept', [RegistrationController::class, 'accept'])->name('registration.accept');
-Route::post('/registration/decline', [RegistrationController::class, 'decline'])->name('registration.decline');
+Route::post('/registration/decline/{id}', [RegistrationController::class, 'decline'])->name('registration.decline');
 
 Route::resource('daftar-haji', DaftarHajiController::class);
 Route::get('/daftar-haji/detail/{id}', [DaftarHajiController::class, 'show'])->name('daftar-haji.detail');

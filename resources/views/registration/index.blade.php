@@ -48,6 +48,40 @@
                     </div>
                 </div>
             </div>
+
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    Daftar Permintaan Pendaftaran Diterima & Ditolak
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" style="text-align: center;" id="myTable">
+                            <thead>
+                                <tr>
+                                    <th width="10%">No</th>
+                                    <th>Nama Lengkap</th>
+                                    <th>Tanggal Keberangkatan</th>
+                                    <th width="20%"><i class="fa fa-cog"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @php $i = 0; @endphp
+                                @foreach($data2 as $dd)
+                                @php $i += 1; @endphp
+                                <tr>
+                                    <td>@php echo $i; @endphp</td>
+                                    <td>{{$dd->nama_lengkap}}</td>
+                                    <td>{{ date('d F Y', strtotime($dd->tanggal_keberangkatan)) }}</td>
+                                    <td class="@if($dd->status == 2) alert-success @elseif($dd->status == 0) alert-danger @endif" role="alert">
+                                        @if($dd->status == 2) Diterima @elseif($dd->status == 0) Ditolak <br><small> Alasan: {{$dd->alasan_penolakan}} </small> @endif
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </section>

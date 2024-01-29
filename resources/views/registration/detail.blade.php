@@ -91,10 +91,10 @@
                             @if($data->status == 1)
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="d-flex justify-content-end">
-                                    <form action="/registration/decline" class="ml-2" method="post">
+                                    <form action="/registration/decline/{{$data->id}}" class="ml-2" method="post">
                                         @csrf
                                         <input type="text" name="id" class="d-none" value="{{$data->id}}">
-                                        <a href="#modal{{$data->id}}" data-toggle="modal" class="btn btn-danger">Decline</a>
+                                        <button class="btn btn-danger" type="submit">Decline</button>
                                     </form>
                                     <form action="/registration/accept" class="ml-2" method="post">
                                         @csrf
@@ -127,29 +127,7 @@
                             </div>
                             @endif
 
-                            <!-- EDIT WITH MODAL -->
-                            <div class="modal fade" id="modal{{$data->id}}" tabindex="-1" role="dialog" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content" >
-                                        <form role="form" method="POST" action="{{ url('registration/decline') }}" enctype="multipart/form-data">
-                                            @csrf
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                                <h4 class="modal-title">Penolakan Pendaftaran Naik Haji</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <label>Alasan Penolakan:</label>
-                                                <input type="hidden" name="id" value="{{$data->id}}">
-                                                <textarea name="alasan_penolakan" class="form-control" id="" cols="30" rows="10" required></textarea>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="submit" class="btn btn-info">Submit</button>
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+
 
                         </div>
                     </div>

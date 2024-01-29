@@ -32,12 +32,6 @@
                     <a class="nav-link click-scroll" href="#section_5">Paket</a>
                 </li>
 
-                @auth
-                <li class="nav-item">
-                    <a href="/daftar-haji/create" class="nav-link click-scroll">Daftar</a>
-                </li>
-                @endauth
-
             </ul>
 
             @auth

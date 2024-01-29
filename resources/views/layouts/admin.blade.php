@@ -54,8 +54,9 @@
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <script type="text/javascript" src="/admin/assets/datatables/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" src="/admin/assets/datatables/dataTables.bootstrap4.min.js"></script>
+  <script type="text/javascript" src="../../admin/assets/datatables/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="../../admin/assets/datatables/dataTables.bootstrap4.min.js"></script>
+
 
 
   <!-- JS Libraies -->
