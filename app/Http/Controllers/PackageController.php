@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Package;
 use Illuminate\Http\Request;
+use Auth;
 
 class PackageController extends Controller
 {
@@ -14,8 +15,13 @@ class PackageController extends Controller
      */
     public function index()
     {
-        $data = Package::all();
-        return view('package.index', compact('data'));
+        $user = Auth::user()->type;
+        if ($user == 0) {
+            $data = Package::all();
+            return view('package.index', compact('data'));
+        } else {
+            return redirect()->back();
+        }
     }
 
     /**

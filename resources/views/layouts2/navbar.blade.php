@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="/">
             SI HAJI
         </a>
 
-        <a href="ticket.html" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
+        <!-- <a href="ticket.html" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a> -->
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,6 +32,12 @@
                     <a class="nav-link click-scroll" href="#section_5">Paket</a>
                 </li>
 
+                @auth
+                <li class="nav-item">
+                    <a class="nav-link" href="/daftar-haji/create">Riwayat</a>
+                </li>
+                @endauth
+
             </ul>
 
             @auth
@@ -55,7 +61,7 @@
             <!-- </li> -->
             <div>
             @else
-                <a href="/daftar-haji/create" class="btn custom-btn d-lg-block d-none">Daftar</a>
+                <a href="/login" class="btn custom-btn d-lg-block d-none">Login</a>
             @endauth
             
         </div>

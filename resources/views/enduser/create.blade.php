@@ -75,14 +75,14 @@
                                         </div>
                                     </div>
 
-                                    <div class="row mt-4">
+                                    <!-- <div class="row mt-4">
                                         <div class="form-group">
                                             <label for="tanggal_keberangkatan" class="col-lg-12 col-md-12 col-12 control-label">Tanggal Keberangkatan</label>
                                             <div class="col-lg-6 col-md-6 col-12">
                                                 <input type="text" name="tanggal_keberangkatan" id="tanggal_keberangkatan" class="form-control" readonly>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                     <div class="col-lg-4 col-md-10 col-8 mx-auto mt-6">
                                         <button type="submit" class="form-control">Submit</button>
@@ -113,6 +113,8 @@
                                     <tr>
                                         <th width="10%">No</th>
                                         <th>Nama</th>
+                                        <th>Tanggal Keberangkatan</th>
+                                        <th>Status</th>
                                         <th width="20%">Aksi</th>
                                     </tr>
                                 </thead>
@@ -123,9 +125,12 @@
                                     <tr>
                                         <td>@php echo $i; @endphp</td>
                                         <td>{{$d->nama_lengkap}}</td>
+                                        <td>{{tanggal_indonesia($d->tanggal_keberangkatan)}}</td>
+                                        <td class="@if($d->status == 2) alert-success @elseif($d->status == 0) alert-danger  @else alert-info @endif" role="alert">
+                                            @if($d->status == 2) Diterima @elseif($d->status == 0) Ditolak @else Pengajuan @endif
+                                        </td>
                                         <td>
-                                        <a href="{{ route('daftar-haji.detail', $d->id) }}" class="btn btn-icon btn-info" >Lihat</i></a>
-                                                
+                                            <a href="{{ route('daftar-haji.detail', $d->id) }}" class="btn btn-icon btn-info" >Lihat</i></a>       
                                         </td>
                                     </tr>
                                     @endforeach

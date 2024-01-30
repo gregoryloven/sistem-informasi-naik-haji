@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Registration;
 use Illuminate\Http\Request;
+use Auth;
 
 class RegistrationController extends Controller
 {
@@ -14,12 +15,18 @@ class RegistrationController extends Controller
      */
     public function index()
     {
-        $data = Registration::where('status', 1)->get();
-        $data2 = Registration::whereIn('status', [0,2])
-            ->orderby('updated_at', 'desc')
-            ->get();
-
-        return view('registration.index', compact('data','data2'));
+        $user = Auth::user()->type;
+        if ($user == 0) {
+            $data = Registration::where('status', 1)->get();
+            $data2 = Registration::whereIn('status', [0,2])
+                ->orderby('updated_at', 'desc')
+                ->get();
+    
+            return view('registration.index', compact('data','data2'));
+        } else {
+            return redirect()->back();
+        }
+        
     }
 
     public function accept(Request $request)

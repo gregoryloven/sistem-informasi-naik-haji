@@ -46,7 +46,7 @@
                                             <a href="#modalEdit" data-toggle="modal" class="btn btn-icon btn-warning" onclick="EditForm({{ $d->id }})"><i class="far fa-edit"></i></a>
 
                                             <input type="hidden" class="form-control" id='id' name='id' placeholder="Type your name" value="{{$d->id}}">
-                                            <!-- <button type="button" class="btn btn-icon btn-danger" data-id="{{ $d->id }}"><i class="fa fa-trash"></i></button>                                    -->
+                                            <button type="button" class="btn btn-icon btn-danger" data-id="{{ $d->id }}"><i class="fa fa-trash"></i></button>                                   
                                         </form>
                                     </td>
                                 </tr>

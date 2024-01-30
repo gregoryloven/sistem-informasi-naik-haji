@@ -85,7 +85,7 @@
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
                                     <label>Paket</label>
-                                    <input type="text" class="form-control" value="{{$data->package->name}} {{$data->package->tahun}}" id='package_id' name='package_id' placeholder="Paket" readonly required>
+                                    <input type="text" class="form-control" value="{{$data->package->nama}} ({{$data->package->tahun}} Tahun)" id='package_id' name='package_id' placeholder="Paket" readonly required>
                                 </div>
                             </div>
                             @if($data->status == 1)
@@ -105,10 +105,15 @@
                             </div><br>
                             @elseif ($data->status == 2)
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                <div class="d-flex justify-content-end">
+                                <div class="d-flex justify-content-end align-items-center">
                                     <div class="alert alert-success" role="alert">
                                         @if($data->status == 2) Diterima @endif
                                     </div>
+                                </div>
+                                <div class="d-flex justify-content-end mt-2">
+                                    <small>
+                                        <b>Pada:</b> {{tanggal_indonesia($data->updated_at)}}, {{waktu_indonesia($data->updated_at)}}
+                                    </small>
                                 </div>
                             </div>
                             @else

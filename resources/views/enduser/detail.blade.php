@@ -78,7 +78,7 @@
                                         <div class="form-group">
                                             <label for="tanggal_keberangkatan" class="col-lg-12 col-md-12 col-12 control-label">Tanggal Keberangkatan</label>
                                             <div class="col-lg-6 col-md-6 col-12">
-                                                <input type="date" value="{{$data->tanggal_keberangkatan}}" name="tanggal_keberangkatan" id="tanggal_keberangkatan" class="form-control" readonly>
+                                                <input type="text" value="{{tanggal_indonesia($data->tanggal_keberangkatan)}}" name="tanggal_keberangkatan" id="tanggal_keberangkatan" class="form-control" readonly>
                                             </div>
                                         </div>
                                     </div>

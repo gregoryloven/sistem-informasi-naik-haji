@@ -34,10 +34,15 @@ class DaftarHajiController extends Controller
      */
     public function create()
     {
-        $user = Auth::user()->id;
-        $data = Registration::where('user_id', $user)->get();
-        $pack = Package::all();
-        return view('enduser.create', compact('data', 'pack'));
+        if (Auth::user()->type == 1) {
+            $user = Auth::user()->id;
+            $data = Registration::where('user_id', $user)->get();
+            $pack = Package::all();
+            return view('enduser.create', compact('data', 'pack'));
+        } else {
+            $data = Package::all();
+            return view('package.index', compact('data'));
+        }
     }
 
     /**
@@ -57,11 +62,7 @@ class DaftarHajiController extends Controller
         $data->alamat = $request->alamat;
 
         $cek = Package::where('id', $request->package_id)->first();
-        if ($cek->tahun == 5) {
-            $data->tanggal_keberangkatan = Carbon::now()->addYears(5);
-        } else {
-            $data->tanggal_keberangkatan = Carbon::now()->addYears(10);
-        }
+        $data->tanggal_keberangkatan = Carbon::now()->addYears($cek->tahun);
 
         $data->status = 1;
 

@@ -61,7 +61,7 @@
                                     <th width="10%">No</th>
                                     <th>Nama Lengkap</th>
                                     <th>Tanggal Keberangkatan</th>
-                                    <th width="20%"><i class="fa fa-cog"></i></th>
+                                    <th width="20%">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
