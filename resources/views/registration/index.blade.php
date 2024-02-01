@@ -39,7 +39,7 @@
                                     <td>{{$d->nama_lengkap}}</td>
                                      <td>{{ date('d F Y', strtotime($d->tanggal_keberangkatan)) }}</td>
                                     <td>
-                                        <a href="{{ route('registration.detail', $d->id) }}" class="btn btn-icon btn-info" ><i class="fa fa-search"></i></a>
+                                        <a href="{{ route('registration.detail', $d->id) }}" class="btn btn-icon btn-info">Lihat Detail</i></a>
                                     </td>
                                 </tr>
                                 @endforeach
