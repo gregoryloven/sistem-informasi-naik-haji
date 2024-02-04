@@ -19,7 +19,7 @@
                                             <input type="text" name="nama_lengkap" id="nama_lengkap" class="form-control" placeholder="Nama Lengkap" required>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-12">
-                                            <select class="form-control" id='package_id' name='package_id'>
+                                            <select class="form-control" id='package_id' name='package_id' required>
                                                 <option value="" disabled selected>Pilih Paket</option>
                                                     @foreach($pack as $p)
                                                     <option value="{{ $p->id }}">{{ $p->nama }} ({{$p->tahun}} Tahun)</option>
