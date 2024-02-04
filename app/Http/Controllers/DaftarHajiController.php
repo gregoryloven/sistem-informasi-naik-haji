@@ -69,29 +69,29 @@ class DaftarHajiController extends Controller
         $file = $request->file('ktp');
         $imgFolder = 'lampiran/';
         $extension = $request->file('ktp')->extension();
-        $imgFile = time()."_".$request->get('ktp').".".$extension;
-        $file->move($imgFolder,$imgFile);
+        $imgFile = time() . "_" . $file->getClientOriginalName() . "." . $extension;
+        $file->move($imgFolder, $imgFile);
         $data->ktp = $imgFile;
 
         $file2 = $request->file('kk');
         $imgFolder2 = 'lampiran/';
         $extension2 = $request->file('kk')->extension();
-        $imgFile2 = time()."_".$request->get('kk').".".$extension2;
-        $file2->move($imgFolder2,$imgFile2);
+        $imgFile2 = time() . "_" . $file2->getClientOriginalName() . "." . $extension2;
+        $file2->move($imgFolder2, $imgFile2);
         $data->kk = $imgFile2;
 
         $file3 = $request->file('akta_kelahiran');
         $imgFolder3 = 'lampiran/';
         $extension3 = $request->file('akta_kelahiran')->extension();
-        $imgFile3 = time()."_".$request->get('akta_kelahiran').".".$extension3;
-        $file3->move($imgFolder3,$imgFile3);
+        $imgFile3 = time() . "_" . $file3->getClientOriginalName() . "." . $extension3;
+        $file3->move($imgFolder3, $imgFile3);
         $data->akta_kelahiran = $imgFile3;
 
         $file4 = $request->file('dokumen_bpih');
         $imgFolder4 = 'lampiran/';
         $extension4 = $request->file('dokumen_bpih')->extension();
-        $imgFile4 = time()."_".$request->get('dokumen_bpih').".".$extension4;
-        $file4->move($imgFolder4,$imgFile4);
+        $imgFile4 = time() . "_" . $file4->getClientOriginalName() . "." . $extension4;
+        $file4->move($imgFolder4, $imgFile4);
         $data->dokumen_bpih = $imgFile4;
 
         $data->save();
