@@ -328,7 +328,7 @@
                     <div class="pricing-thumb">
                         <div class="d-flex">
                             <div>
-                                <h3><small>Express</small> 5 Tahun</h3>
+                                <h3><small>Express</small> 20 Tahun</h3>
 
                                 <p>Including:</p>
                             </div>
@@ -357,7 +357,7 @@
                     <div class="pricing-thumb">
                         <div class="d-flex">
                             <div>
-                                <h3><small>Regular</small> 10 Tahun</h3>
+                                <h3><small>Regular</small> 29 Tahun</h3>
 
                                 <p>Including:</p>
                             </div>
