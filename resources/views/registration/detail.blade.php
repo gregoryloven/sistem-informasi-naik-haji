@@ -32,6 +32,12 @@
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
+                                    <label>Nomor Validasi</label>
+                                    <input type="number" class="form-control" value="{{$data->nomor_validasi}}" id='nomor_validasi' name='nomor_validasi' placeholder="Nomor Validasi" readonly required>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
                                     <label>Tempat Lahir</label>
                                     <input type="text" class="form-control" value="{{$data->tempat_lahir}}" id='tempat_lahir' name='tempat_lahir' placeholder="Tempat Lahir" readonly required>
                                 </div>
@@ -42,7 +48,7 @@
                                     <input type="date" class="form-control" value="{{$data->tanggal_lahir}}" id='tanggal_lahir' name='tanggal_lahir' readonly required>
                                 </div>
                             </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="form-group">
                                     <label>Alamat</label>
                                     <input type="text" class="form-control" value="{{$data->alamat}}" id='alamat' name='alamat' placeholder="Alamat" readonly required>
@@ -71,21 +77,29 @@
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
-                                    <label>Foto / Scan Dokumen BPIH</label>
-                                    <input class="form-control" value="{{$data->dokumen_bpih}}" id='dokumen_bpih' name='dokumen_bpih' readonly>
-                                    <img id="output4" src="{{asset('lampiran/'.$data->dokumen_bpih)}}" width="100px" height="100px">
+                                    <label>Foto Selfie</label>
+                                    <input class="form-control" value="{{$data->foto_selfie}}" id='foto_selfie' name='foto_selfie' readonly>
+                                    <img id="output4" src="{{asset('lampiran/'.$data->foto_selfie)}}" width="100px" height="100px">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Ijazah</label>
+                                    <input class="form-control" value="{{$data->ijazah}}" id='ijazah' name='ijazah' readonly>
+                                    <img id="output5" src="{{asset('lampiran/'.$data->ijazah)}}" width="100px" height="100px">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Akta Nikah</label>
+                                    <input class="form-control" value="{{$data->akta_nikah}}" id='akta_nikah' name='akta_nikah' readonly>
+                                    <img id="output6" src="{{asset('lampiran/'.$data->akta_nikah)}}" width="100px" height="100px">
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
                                     <label>Tanggal Keberangkatan</label>
-                                    <input type="text" class="form-control" value="{{tanggal_indonesia($data->tanggal_keberangkatan)}}, {{waktu_indonesia($data->tanggal_keberangkatan)}}" id='tanggal_keberangkatan' name='tanggal_keberangkatan' readonly required>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <label>Paket</label>
-                                    <input type="text" class="form-control" value="{{$data->package->nama}} ({{$data->package->tahun}} Tahun)" id='package_id' name='package_id' placeholder="Paket" readonly required>
+                                    <input type="text" class="form-control" value="{{tanggal_indonesia($data->tanggal_keberangkatan)}}" id='tanggal_keberangkatan' name='tanggal_keberangkatan' readonly required>
                                 </div>
                             </div>
                             @if($data->status == 1)

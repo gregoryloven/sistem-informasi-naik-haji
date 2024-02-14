@@ -128,29 +128,20 @@
                             <img src="../../enduser/images/artists/mekah1.jpg" class="artists-image img-fluid">
                         </div>
 
-                        <!-- <div class="artists-hover">
-                            <p>
-                                <strong>Name:</strong>
-                                Madona
-                            </p>
+                    </div>
 
-                            <p>
-                                <strong>Birthdate:</strong>
-                                August 16, 1958
-                            </p>
+                    <div class="artists-thumb">
+                        <div class="artists-image-wrap">
+                            <img src="../../enduser/images/artists/haji4.jpg" class="artists-image img-fluid">
+                        </div>
 
-                            <p>
-                                <strong>Music:</strong>
-                                Pop, R&amp;B
-                            </p>
+                    </div>
 
-                            <hr>
+                    <div class="artists-thumb">
+                        <div class="artists-image-wrap">
+                            <img src="../../enduser/images/artists/jamaah1.jfif" class="artists-image img-fluid">
+                        </div>
 
-                            <p class="mb-0">
-                                <strong>Youtube Channel:</strong>
-                                <a href="#">Madona Official</a>
-                            </p>
-                        </div> -->
                     </div>
                 </div>
 
@@ -160,29 +151,6 @@
                             <img src="../../enduser/images/artists/mekah2.jpg" class="artists-image img-fluid">
                         </div>
 
-                        <!-- <div class="artists-hover">
-                            <p>
-                                <strong>Name:</strong>
-                                Rihana
-                            </p>
-
-                            <p>
-                                <strong>Birthdate:</strong>
-                                Feb 20, 1988
-                            </p>
-
-                            <p>
-                                <strong>Music:</strong>
-                                Country
-                            </p>
-
-                            <hr>
-
-                            <p class="mb-0">
-                                <strong>Youtube Channel:</strong>
-                                <a href="#">Rihana Official</a>
-                            </p>
-                        </div> -->
                     </div>
 
                     <div class="artists-thumb">
@@ -211,6 +179,14 @@
                                 <a href="#">Bruno Official</a>
                             </p>
                         </div> -->
+                    </div>
+
+                    <div class="artists-thumb">
+                        <img src="../../enduser/images/artists/jamaah2.jpg" class="artists-image img-fluid">
+                    </div>
+
+                    <div class="artists-thumb">
+                        <img src="../../enduser/images/artists/jamaah3.jpg" class="artists-image img-fluid">
                     </div>
                 </div>
 

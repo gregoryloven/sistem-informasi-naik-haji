@@ -18,10 +18,12 @@
                                             <label>Nama Lengkap</label>
                                             <input type="text" value="{{$data->nama_lengkap}}" name="nama_lengkap" id="nama_lengkap" class="form-control" placeholder="Nama Lengkap" readonly>
                                         </div>
+
                                         <div class="col-lg-6 col-md-6 col-12">
-                                            <label>Paket</label>
-                                            <input type="text" value="{{$data->package->nama}} ({{$data->package->tahun}} Tahun)" name="nama_lengkap" id="nama_lengkap" class="form-control" placeholder="Nama Lengkap" readonly>
+                                            <label>Nomor Validasi</label>
+                                            <input type="number" value="{{$data->nomor_validasi}}" name="nomor_validasi" id="nomor_validasi" class="form-control" placeholder="Nomor Validasi" readonly>
                                         </div>
+
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-12">
@@ -67,9 +69,27 @@
 
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
-                                                <label>Foto / Scan Dokumen BPIH</label>
-                                                <input type="file" value="{{$data->dokumen_bpih}}" class="form-control mb-0" id="dokumen_bpih" name="dokumen_bpih" onchange="document.getElementById('output4').src = window.URL.createObjectURL(this.files[0])" readonly>
-                                                <img id="output4" src="{{asset('lampiran/'.$data->dokumen_bpih)}}"width="100px" height="100px">
+                                                <label>Foto Selfie</label>
+                                                <input type="file" value="{{$data->foto_selfie}}" class="form-control mb-0" id="foto_selfie" name="foto_selfie" onchange="document.getElementById('output4').src = window.URL.createObjectURL(this.files[0])" readonly>
+                                                <img id="output4" src="{{asset('lampiran/'.$data->foto_selfie)}}"width="100px" height="100px">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-4">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                            <div class="form-group">
+                                                <label>Ijazah</label>
+                                                <input type="file" value="{{$data->ijazah}}" class="form-control mb-0" id="ijazah" name="ijazah" onchange="document.getElementById('output5').src = window.URL.createObjectURL(this.files[0])" readonly>
+                                                <img id="output5" src="{{asset('lampiran/'.$data->ijazah)}}" width="100px" height="100px">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                            <div class="form-group">
+                                                <label>Akta Nikah</label>
+                                                <input type="file" value="{{$data->akta_nikah}}" class="form-control mb-0" id="akta_nikah" name="akta_nikah" onchange="document.getElementById('output6').src = window.URL.createObjectURL(this.files[0])" readonly>
+                                                <img id="output6" src="{{asset('lampiran/'.$data->akta_nikah)}}"width="100px" height="100px">
                                             </div>
                                         </div>
                                     </div>

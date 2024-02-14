@@ -18,14 +18,18 @@
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <input type="text" name="nama_lengkap" id="nama_lengkap" class="form-control" placeholder="Nama Lengkap" required>
                                         </div>
+
                                         <div class="col-lg-6 col-md-6 col-12">
+                                            <input type="number" name="nomor_validasi" id="nomor_validasi" class="form-control" placeholder="Nomor Validasi" required>
+                                        </div>
+                                        <!-- <div class="col-lg-6 col-md-6 col-12">
                                             <select class="form-control" id='package_id' name='package_id' required>
                                                 <option value="" disabled selected>Pilih Paket</option>
                                                     @foreach($pack as $p)
                                                     <option value="{{ $p->id }}">{{ $p->nama }} ({{$p->tahun}} Tahun)</option>
                                                     @endforeach
                                             </select>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-12">
@@ -38,6 +42,10 @@
                                     </div>
 
                                     <textarea name="alamat" rows="3" class="form-control" id="alamat" placeholder="Alamat"></textarea>
+
+                                    <div class="row">
+                                        <small><label><span style="color: red;">*Maksimum Ukuran Upload File (jpg/png) 5 mb</span></label></small><br><br>
+                                    </div>
 
                                     <div class="row">
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -68,9 +76,27 @@
 
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
-                                                <label>Foto / Scan Dokumen BPIH</label>
-                                                <input type="file" value="" class="form-control mb-0" id="dokumen_bpih" name="dokumen_bpih" onchange="document.getElementById('output4').src = window.URL.createObjectURL(this.files[0])" required>
+                                                <label>Foto Selfie</label>
+                                                <input type="file" value="" class="form-control mb-0" id="foto_selfie" name="foto_selfie" onchange="document.getElementById('output4').src = window.URL.createObjectURL(this.files[0])" required>
                                                 <img id="output4" width="100px" height="100px">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-4">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                            <div class="form-group">
+                                                <label>Ijazah</label>
+                                                <input type="file" value="" class="form-control mb-0" id="ijazah" name="ijazah" onchange="document.getElementById('output5').src = window.URL.createObjectURL(this.files[0])" required>
+                                                <img id="output5" width="100px" height="100px">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                            <div class="form-group">
+                                                <label>Akta Nikah</label>
+                                                <input type="file" value="" class="form-control mb-0" id="akta_nikah" name="akta_nikah" onchange="document.getElementById('output6').src = window.URL.createObjectURL(this.files[0])" required>
+                                                <img id="output6" width="100px" height="100px">
                                             </div>
                                         </div>
                                     </div>

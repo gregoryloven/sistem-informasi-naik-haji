@@ -21,8 +21,11 @@ class DaftarHajiController extends Controller
             $pack = Package::all();
             return view('enduser.index', compact('pack'));
         } else {
-            $data = Package::all();
-            return view('package.index', compact('data'));
+            $data = Registration::where('status', 1)->get();
+            $data2 = Registration::whereIn('status', [0,2])
+                ->orderby('updated_at', 'desc')
+                ->get();
+            return view('registration.index', compact('data','data2'));
         }
         
     }
@@ -55,14 +58,15 @@ class DaftarHajiController extends Controller
     {
         $data = new Registration();
         $data->user_id = Auth::user()->id;
-        $data->package_id = $request->package_id;
+        // $data->package_id = $request->package_id;
         $data->nama_lengkap = $request->nama_lengkap;
         $data->tempat_lahir = $request->tempat_lahir;
         $data->tanggal_lahir = $request->tanggal_lahir;
         $data->alamat = $request->alamat;
-
-        $cek = Package::where('id', $request->package_id)->first();
-        $data->tanggal_keberangkatan = Carbon::now()->addYears($cek->tahun);
+        $data->nomor_validasi = $request->nomor_validasi;
+        $data->tanggal_keberangkatan = Carbon::now()->addYears(29);
+        // $cek = Package::where('id', $request->package_id)->first();
+        // $data->tanggal_keberangkatan = Carbon::now()->addYears($cek->tahun);
 
         $data->status = 1;
 
@@ -87,12 +91,32 @@ class DaftarHajiController extends Controller
         $file3->move($imgFolder3, $imgFile3);
         $data->akta_kelahiran = $imgFile3;
 
-        $file4 = $request->file('dokumen_bpih');
+        $file4 = $request->file('ijazah');
         $imgFolder4 = 'lampiran/';
-        $extension4 = $request->file('dokumen_bpih')->extension();
+        $extension4 = $request->file('ijazah')->extension();
         $imgFile4 = time() . "_" . $file4->getClientOriginalName() . "." . $extension4;
         $file4->move($imgFolder4, $imgFile4);
-        $data->dokumen_bpih = $imgFile4;
+        $data->ijazah = $imgFile4;
+
+        $file7 = $request->file('akta_nikah');
+        $imgFolder7 = 'lampiran/';
+        $extension7 = $request->file('akta_nikah')->extension();
+        $imgFile7 = time() . "_" . $file7->getClientOriginalName() . "." . $extension7;
+        $file7->move($imgFolder7, $imgFile7);
+        $data->akta_nikah = $imgFile7;
+
+        $file6 = $request->file('foto_selfie');
+        $imgFolder6 = 'lampiran/';
+        $extension6 = $request->file('foto_selfie')->extension();
+        $imgFile6 = time() . "_" . $file6->getClientOriginalName() . "." . $extension6;
+        $file6->move($imgFolder6, $imgFile6);
+        $data->foto_selfie = $imgFile6;
+
+        // Validasi ukuran file
+        $maxFileSize = 5 * 1024; // 5 MB dalam kilobytes
+        if ($file->getSize() > $maxFileSize || $file2->getSize() > $maxFileSize || $file3->getSize() > $maxFileSize || $file4->getSize() > $maxFileSize || $file7->getSize() > $maxFileSize || $file6->getSize() > $maxFileSize) {
+            return back()->withToastError('Pendaftaran Naik Haji Gagal. File melebihi 5 mb');
+        }
 
         $data->save();
 

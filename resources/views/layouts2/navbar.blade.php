@@ -38,6 +38,11 @@
                 </li>
                 @endauth
 
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost/sistem-informasi-naik-haji/public/sk.pdf" download="sk.pdf">Download SK</a>
+                </li>
+
+
             </ul>
 
             @auth

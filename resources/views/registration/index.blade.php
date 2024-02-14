@@ -62,6 +62,7 @@
                                     <th>Nama Lengkap</th>
                                     <th>Tanggal Keberangkatan</th>
                                     <th width="20%">Status</th>
+                                    <th width="20%"><i class="fa fa-cog"></i></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -74,6 +75,9 @@
                                     <td>{{ date('d F Y', strtotime($dd->tanggal_keberangkatan)) }}</td>
                                     <td class="@if($dd->status == 2) alert-success @elseif($dd->status == 0) alert-danger @endif" role="alert">
                                         @if($dd->status == 2) Diterima @elseif($dd->status == 0) Ditolak <br><small> Alasan: {{$dd->alasan_penolakan}} </small> @endif
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('registration.detail', $dd->id) }}" class="btn btn-icon btn-info">Lihat Detail</i></a>
                                     </td>
                                 </tr>
                                 @endforeach
