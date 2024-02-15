@@ -19,14 +19,15 @@
                 <li class="nav-item">
                     <a class="nav-link click-scroll" href="#section_2">Doa</a>
                 </li>
+                
 
                 <li class="nav-item">
                     <a class="nav-link click-scroll" href="#section_6">Album</a>
                 </li>
 
-                <!-- <li class="nav-item">
-                    <a class="nav-link click-scroll" href="#section_3">Doa</a>
-                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link click-scroll" href="#section_3">Estimasi Biaya</a>
+                </li>
 
                 <li class="nav-item">
                     <a class="nav-link click-scroll" href="#section_5">Paket</a>
