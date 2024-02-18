@@ -55,6 +55,7 @@ https://templatemo.com/tm-583-festava-live
                 @include('layouts2.navbar')
             @endif
             
+            @include('sweetalert::alert')
             @yield('content')
             
         </main>

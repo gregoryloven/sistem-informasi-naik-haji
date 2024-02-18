@@ -139,6 +139,7 @@
                                     <tr>
                                         <th width="10%">No</th>
                                         <th>Nama</th>
+                                        <th>Foto / Scan KTP</th>
                                         <th>Tanggal Keberangkatan</th>
                                         <th>Status</th>
                                         <th width="20%">Aksi</th>
@@ -151,6 +152,7 @@
                                     <tr>
                                         <td>@php echo $i; @endphp</td>
                                         <td>{{$d->nama_lengkap}}</td>
+                                        <td><img src="{{asset('lampiran/'.$d->ktp)}}" height='100px'/></td>
                                         <td>{{tanggal_indonesia($d->tanggal_keberangkatan)}}</td>
                                         <td class="@if($d->status == 2) alert-success @elseif($d->status == 0) alert-danger  @else alert-info @endif" role="alert">
                                             @if($d->status == 2) Diterima @elseif($d->status == 0) Ditolak @else Pengajuan @endif

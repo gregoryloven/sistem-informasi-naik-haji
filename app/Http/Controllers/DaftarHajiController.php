@@ -7,6 +7,7 @@ use App\Models\Package;
 use Illuminate\Http\Request;
 use Auth;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
 
 class DaftarHajiController extends Controller
 {
@@ -56,6 +57,26 @@ class DaftarHajiController extends Controller
      */
     public function store(Request $request)
     {
+        // Validasi ukuran file
+        $rules = [
+            'ktp' => 'max:5120', // 5 MB dalam kilobytes
+            'kk' => 'max:5120',
+            'akta_kelahiran' => 'max:5120',
+            'ijazah' => 'max:5120',
+            'akta_nikah' => 'max:5120',
+            'foto_selfie' => 'max:5120',
+        ];
+
+        $messages = [
+            'max' => 'Pendaftaran Naik Haji Gagal. File :attribute melebihi 5 MB',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return back()->withToastError($validator)->withInput();
+        }
+        
         $data = new Registration();
         $data->user_id = Auth::user()->id;
         // $data->package_id = $request->package_id;
@@ -112,11 +133,6 @@ class DaftarHajiController extends Controller
         $file6->move($imgFolder6, $imgFile6);
         $data->foto_selfie = $imgFile6;
 
-        // Validasi ukuran file
-        $maxFileSize = 5 * 1024; // 5 MB dalam kilobytes
-        if ($file->getSize() > $maxFileSize || $file2->getSize() > $maxFileSize || $file3->getSize() > $maxFileSize || $file4->getSize() > $maxFileSize || $file7->getSize() > $maxFileSize || $file6->getSize() > $maxFileSize) {
-            return back()->withToastError('Pendaftaran Naik Haji Gagal. File melebihi 5 mb');
-        }
 
         $data->save();
 
